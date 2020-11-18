@@ -53,7 +53,7 @@ async def mention_afk(mention):
         if ISAFK:
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply("I'm AFK right now."
+                    await mention.reply("Gw masih afk cok sabar."
                                         f"\nBecause I'm `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -121,10 +121,10 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit("Going AFK!"
+        await afk_e.edit("Pergi AFK!"
                          f"\nReason: `{string}`")
     else:
-        await afk_e.edit("Going AFK!")
+        await afk_e.edit("Pergi AFK!")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     ISAFK = True
@@ -140,7 +140,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("I'm no longer AFK.")
+        msg = await notafk.respond("Gaada Afk deh.")
         await sleep(2)
         await msg.delete()
         if BOTLOG:
