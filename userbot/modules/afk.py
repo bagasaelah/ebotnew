@@ -140,7 +140,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("Gaada Afk deh.")
+        msg = await notafk.respond("Gakjadi Afk deh.")
         await sleep(2)
         await msg.delete()
         if BOTLOG:
